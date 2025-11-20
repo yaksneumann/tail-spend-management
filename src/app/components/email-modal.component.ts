@@ -2,6 +2,7 @@ import { Component, inject, Input, Output, EventEmitter, signal } from '@angular
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Contract } from '../services/mock-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-email-modal',
@@ -142,6 +143,8 @@ export class EmailModalComponent {
 
   selectedAction = signal<string | null>(null);
 
+  constructor(private router: Router) {}
+
   closeModal() {
     this.selectedAction.set(null);
     this.isVisible.set(false);
@@ -159,6 +162,9 @@ export class EmailModalComponent {
     if (currentContract && action) {
       this.actionSelected.emit({contract: currentContract, action});
       this.closeModal();
+      if (action === 'prolong') {
+        this.router.navigate(['/vendor-ui']);
+      }
     }
   }
 
