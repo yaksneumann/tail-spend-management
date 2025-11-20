@@ -14,7 +14,7 @@ import { EmailModalComponent } from './email-modal.component';
         <div class="header-content">
           <h1 class="dashboard-title">
             <i class="icon-briefcase"></i>
-            Contract Management Dashboard
+            Tail Spend Management Dashboard
           </h1>
           <p class="dashboard-subtitle">Monitor and manage your procurement contracts</p>
         </div>
@@ -140,8 +140,8 @@ import { EmailModalComponent } from './email-modal.component';
                   <i class="icon-email"></i>
                   Email
                 </button>
-                <button class="btn btn-sm btn-success" (click)="takeAction(contract, 'prolong')">
-                  Prolong
+                <button class="btn btn-sm btn-success" (click)="showEmailModal(contract)">
+                  Renew as is
                 </button>
                 <button class="btn btn-sm btn-warning" (click)="takeAction(contract, 'review')">
                   Review

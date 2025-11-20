@@ -81,7 +81,7 @@ import { Contract } from '../services/mock-data.service';
                 </button>
                 <button class="action-btn prolong-btn" (click)="selectAction('prolong')">
                   <i class="btn-icon">🔄</i>
-                  PROLONG
+                  RENEW AS IS
                 </button>
                 <button class="action-btn modify-btn" (click)="selectAction('modify')">
                   <i class="btn-icon">✏️</i>
@@ -97,7 +97,7 @@ import { Contract } from '../services/mock-data.service';
                     @if (selectedAction() === 'terminate') {
                       <p class="feedback-detail">The contract will be marked for termination and the vendor will be notified.</p>
                     } @else if (selectedAction() === 'prolong') {
-                      <p class="feedback-detail">The contract will be renewed with the same terms and conditions.</p>
+                      <p class="feedback-detail">The contract will be renewed as is with the same terms and conditions.</p>
                     } @else if (selectedAction() === 'modify') {
                       <p class="feedback-detail">You will be contacted to discuss modifications to the contract terms.</p>
                     }
@@ -201,7 +201,10 @@ export class EmailModalComponent {
   getButtonText(): string {
     const action = this.selectedAction();
     if (action) {
-      const actionText = action.charAt(0).toUpperCase() + action.slice(1);
+      let actionText = action.charAt(0).toUpperCase() + action.slice(1);
+      if (action === 'prolong') {
+        actionText = 'Renew as is';
+      }
       return `Send Email & ${actionText}`;
     }
     return 'Send Email';

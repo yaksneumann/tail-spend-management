@@ -109,20 +109,12 @@ import { EmailModalComponent } from './email-modal.component';
                   <td class="contract-actions">
                     <div class="action-buttons">
                       <button 
-                        class="btn btn-sm btn-info" 
+                        class="btn btn-sm btn-success" 
                         (click)="showEmailModal(contract)"
                         [disabled]="contract.renewalStatus === 'Completed' || contract.renewalStatus === 'Terminated'"
                       >
-                        <i class="icon-email"></i>
-                        Email
-                      </button>
-                      <button 
-                        class="btn btn-sm btn-success" 
-                        (click)="takeAction(contract, 'prolong')"
-                        [disabled]="contract.renewalStatus === 'Completed' || contract.renewalStatus === 'Terminated'"
-                      >
                         <i class="icon-check"></i>
-                        Prolong
+                        Renew as is
                       </button>
                       <button 
                         class="btn btn-sm btn-warning" 

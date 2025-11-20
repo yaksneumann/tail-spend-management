@@ -10,22 +10,14 @@
         </div>
       </div>
       <div class="nav-actions">
-        <button 
-          class="nav-btn" 
-          [class.active]="currentView() === 'dashboard'"
-          (click)="showDashboard()"
-        >
+        <a class="nav-btn" routerLink="/" routerLinkActive="active">
           <i class="icon-dashboard"></i>
           Dashboard
-        </button>
-        <button 
-          class="nav-btn" 
-          [class.active]="currentView() === 'contracts'"
-          (click)="showContracts()"
-        >
+        </a>
+        <a class="nav-btn" routerLink="/contracts" routerLinkActive="active">
           <i class="icon-table"></i>
           All Contracts
-        </button>
+        </a>
         <a class="nav-btn" routerLink="/about" routerLinkActive="active">
           <i class="icon-info"></i>
           About
@@ -36,11 +28,6 @@
 
   <!-- Main Content -->
   <main class="app-main">
-    @if (currentView() === 'dashboard') {
-      <app-dashboard />
-    } @else if (currentView() === 'contracts') {
-      <app-contracts-table />
-    }
     <router-outlet />
   </main>
 </div>

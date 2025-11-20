@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './components/dashboard.component';
@@ -13,14 +13,5 @@ import { AboutComponent } from './about.component';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('SmartTail');
-  protected readonly currentView = signal<'dashboard' | 'contracts'>('dashboard');
-
-  showDashboard() {
-    this.currentView.set('dashboard');
-  }
-
-  showContracts() {
-    this.currentView.set('contracts');
-  }
+  protected readonly title = () => 'SmartTail';
 }
