@@ -1,0 +1,534 @@
+/* Email Modal Component Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #0078d4, #106ebe);
+  color: white;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Email Container */
+.email-container {
+  flex: 1;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+
+/* Email Header */
+.email-header {
+  background: linear-gradient(135deg, #0078d4, #106ebe);
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.company-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+}
+
+.company-info h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Alert Banner */
+.alert-banner {
+  background: linear-gradient(135deg, #d83b01, #ff6347);
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 3px solid #c13100;
+}
+
+.alert-icon {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.alert-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.alert-content p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* Email Content */
+.email-content {
+  background: white;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.email-greeting {
+  margin-bottom: 1.5rem;
+}
+
+.email-greeting p {
+  font-size: 1.1rem;
+  color: #2d3748;
+}
+
+.email-body {
+  margin-bottom: 2rem;
+}
+
+.email-body p {
+  margin-bottom: 1rem;
+  color: #4a5568;
+  font-size: 1rem;
+}
+
+/* Contract Details */
+.contract-details {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #0078d4;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 600;
+  color: #2d3748;
+  min-width: 140px;
+}
+
+.value {
+  color: #4a5568;
+  text-align: right;
+  font-weight: 500;
+}
+
+.action-prompt {
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin: 2rem 0 1rem 0;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 2px dashed #cbd5e0;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  font-size: 1.5rem;
+  display: block;
+}
+
+.terminate-btn {
+  background: linear-gradient(135deg, #d83b01, #c13100);
+  color: white;
+}
+
+.terminate-btn:hover {
+  background: linear-gradient(135deg, #c13100, #a52c00);
+}
+
+.prolong-btn {
+  background: linear-gradient(135deg, #0078d4, #106ebe);
+  color: white;
+}
+
+.prolong-btn:hover {
+  background: linear-gradient(135deg, #106ebe, #005a9e);
+}
+
+.modify-btn {
+  background: linear-gradient(135deg, #107c10, #0e6f0e);
+  color: white;
+}
+
+.modify-btn:hover {
+  background: linear-gradient(135deg, #0e6f0e, #0c5c0c);
+}
+
+/* Action Feedback */
+.action-feedback {
+  margin: 1.5rem 0;
+  padding: 0;
+  animation: slideDown 0.3s ease-out;
+}
+
+.feedback-content {
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-terminate {
+  background: linear-gradient(135deg, #fee, #fdd);
+  border: 2px solid #d83b01;
+  color: #c13100;
+}
+
+.feedback-prolong {
+  background: linear-gradient(135deg, #e6f3ff, #cce7ff);
+  border: 2px solid #0078d4;
+  color: #106ebe;
+}
+
+.feedback-modify {
+  background: linear-gradient(135deg, #e6f7e6, #ccf2cc);
+  border: 2px solid #107c10;
+  color: #0e6f0e;
+}
+
+.feedback-content i {
+  font-size: 2rem;
+}
+
+.feedback-content p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.feedback-detail {
+  font-size: 0.9rem !important;
+  opacity: 0.8;
+}
+
+/* Email Footer */
+.email-footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+.email-footer p {
+  margin-bottom: 0.75rem;
+  color: #4a5568;
+}
+
+.signature {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 4px solid #0078d4;
+}
+
+.signature p {
+  margin: 0.25rem 0;
+  color: #2d3748;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0078d4, #106ebe);
+  color: white;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #4a5568;
+  border: 1px solid #cbd5e0;
+}
+
+.btn-secondary:hover {
+  background: #cbd5e0;
+}
+
+/* Icon Styles */
+.icon-close::before { content: '✕'; }
+.icon-send::before { content: '📤'; }
+.icon-terminate::before { content: '🛑'; }
+.icon-renew::before { content: '🔄'; }
+.icon-edit::before { content: '✏️'; }
+.icon-check::before { content: '✅'; }
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .modal-container {
+    margin: 0.5rem;
+    max-width: none;
+    width: calc(100% - 1rem);
+    max-height: 95vh;
+  }
+
+  .modal-header,
+  .email-content,
+  .modal-actions {
+    padding: 1rem;
+  }
+
+  .email-header,
+  .alert-banner {
+    padding: 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .alert-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .action-btn {
+    min-width: auto;
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .value {
+    text-align: left;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-logo {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .alert-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .alert-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .contract-details {
+    padding: 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .modal-overlay {
+    position: static;
+    background: none;
+    backdrop-filter: none;
+  }
+
+  .modal-container {
+    box-shadow: none;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .modal-header,
+  .modal-actions {
+    display: none;
+  }
+
+  .email-container {
+    overflow: visible;
+  }
+}
