@@ -28,7 +28,7 @@ import { EmailModalComponent } from './email-modal.component';
               <i class="icon-alert"></i>
             </div>
             <div class="notification-text">
-              <h3>{{ expiringContracts().length }} Contract(s) Require Immediate Attention</h3>
+              <h3>{{ expiringContracts().length }} Contracts Require Immediate Attention</h3>
               <p>Contracts expiring within the next 3 months</p>
             </div>
             <div class="notification-actions">

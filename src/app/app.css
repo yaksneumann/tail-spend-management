@@ -7,7 +7,7 @@
 
 /* Navigation Styles */
 .app-nav {
-  background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+  background: linear-gradient(135deg, #005a9e 0%, #004578 100%);
   color: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   position: sticky;
@@ -29,24 +29,44 @@
 
 .nav-brand {
   display: flex;
+  align-items: center;
+}
+
+.app-logo {
+  height: 48px;
+  width: 48px;
+  margin-right: 18px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid #e5e5e5;
+  padding: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+  object-fit: contain;
+  display: block;
+}
+
+.brand-text {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .app-title {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
-  background: linear-gradient(135deg, #00bcf2, #0078d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: none;
+  color: #fff;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
 }
 
 .app-subtitle {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin: 0;
-  opacity: 0.8;
-  color: #cbd5e0;
+  color: #b3d6f7;
+  opacity: 1;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .nav-actions {

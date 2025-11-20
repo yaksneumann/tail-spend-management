@@ -3,8 +3,11 @@
   <nav class="app-nav">
     <div class="nav-content">
       <div class="nav-brand">
-        <h1 class="app-title">{{ title() }}</h1>
-        <p class="app-subtitle">Tail Spend Management</p>
+        <img src="/logo.png" alt="SmartTail Logo" class="app-logo" />
+        <div class="brand-text">
+          <h1 class="app-title">{{ title() }}</h1>
+          <p class="app-subtitle">Tail Spend Management</p>
+        </div>
       </div>
       <div class="nav-actions">
         <button 
@@ -23,6 +26,10 @@
           <i class="icon-table"></i>
           All Contracts
         </button>
+        <a class="nav-btn" routerLink="/about" routerLinkActive="active">
+          <i class="icon-info"></i>
+          About
+        </a>
       </div>
     </div>
   </nav>
@@ -34,7 +41,6 @@
     } @else if (currentView() === 'contracts') {
       <app-contracts-table />
     }
+    <router-outlet />
   </main>
 </div>
-
-<router-outlet />
