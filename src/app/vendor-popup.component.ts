@@ -1,5 +1,6 @@
-import { Component, signal, Output, EventEmitter } from '@angular/core';
+import { Component, signal, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vendor-popup',
@@ -41,12 +42,12 @@ import { CommonModule } from '@angular/common';
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-      padding: 2.5rem 2rem 2rem 2rem;
+      padding: 1.5rem 0.75rem 1rem 0.75rem;
       max-width: 480px;
       width: 100%;
       text-align: left;
       position: relative;
-      max-height: 90vh;
+      max-height: 95vh;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -54,31 +55,31 @@ import { CommonModule } from '@angular/common';
     }
     .vendor-popup-title {
       color: #005a9e;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
       font-weight: 700;
       text-align: center;
     }
     .vendor-popup-message p {
       margin-bottom: 1rem;
       color: #222;
-      font-size: 1.05rem;
+      font-size: 1.02rem;
     }
     .vendor-popup-actions {
       display: flex;
       gap: 1rem;
       justify-content: center;
-      margin-top: 2rem;
+      margin-top: 1.2rem;
       position: sticky;
       bottom: 0;
-      background: #fff;
-      padding-bottom: 1rem;
+      background: linear-gradient(to top, #fff 90%, #fff0 100%);
+      padding-bottom: 0.5rem;
       z-index: 2;
     }
     .btn {
-      padding: 0.7rem 1.5rem;
+      padding: 0.6rem 1.1rem;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 600;
       border: none;
       cursor: pointer;
@@ -100,16 +101,32 @@ import { CommonModule } from '@angular/common';
     .btn-outline:hover {
       background: #e6f2fb;
     }
+    @media (max-width: 600px) {
+      .vendor-popup-container {
+        padding: 0.7rem 0.2rem 0.5rem 0.2rem;
+        max-width: 98vw;
+      }
+      .vendor-popup-title {
+        font-size: 1rem;
+      }
+      .btn {
+        font-size: 0.92rem;
+        padding: 0.5rem 0.7rem;
+      }
+    }
   `]
 })
 export class VendorPopupComponent {
   @Output() closed = new EventEmitter<boolean>();
+  private router = inject(Router);
 
   accept() {
     this.closed.emit(true);
+    this.router.navigate(['/']);
   }
 
   decline() {
     this.closed.emit(false);
+    this.router.navigate(['/']);
   }
 }
