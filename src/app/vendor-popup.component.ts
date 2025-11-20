@@ -35,6 +35,7 @@ import { CommonModule } from '@angular/common';
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 1rem;
     }
     .vendor-popup-container {
       background: #fff;
@@ -45,6 +46,11 @@ import { CommonModule } from '@angular/common';
       width: 100%;
       text-align: left;
       position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
     .vendor-popup-title {
       color: #005a9e;
@@ -63,6 +69,11 @@ import { CommonModule } from '@angular/common';
       gap: 1rem;
       justify-content: center;
       margin-top: 2rem;
+      position: sticky;
+      bottom: 0;
+      background: #fff;
+      padding-bottom: 1rem;
+      z-index: 2;
     }
     .btn {
       padding: 0.7rem 1.5rem;
